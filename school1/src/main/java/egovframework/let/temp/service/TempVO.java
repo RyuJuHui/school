@@ -5,16 +5,16 @@ import java.io.Serializable;
 public class TempVO implements Serializable {
 	
 	//임시 데이터 ID
-	private java.lang.Integer tempId;
+	private String tempId;
 	
 	//임시 데이터 값
 	private String tempVal;
 
-	public java.lang.Integer getTempId() {
+	public String getTempId() {
 		return tempId;
 	}
 
-	public void setTempId(java.lang.Integer tempId) {
+	public void setTempId(String tempId) {
 		this.tempId = tempId;
 	}
 

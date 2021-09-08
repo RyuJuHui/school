@@ -11,5 +11,6 @@ public class TempDAO extends EgovAbstractDAO {
 	public TempVO selectTemp(TempVO vo) throws Exception {
 		return (TempVO)select("TempDAO.selectTemp", vo);
 	}
+//	mybatis와 동일 
 	
 }

@@ -11,22 +11,13 @@
 <title>데이터 가져오기~ </title>
 </head>
 <body>
-<%--    결과 값 : ${result.tempVal} --%>
-   <table>
-   	<thead>
-   	<th>
-   		<tr>TEMP_ID</tr>
-   		<tr>TEMP_VAL</tr>
-   	</th>
-   	</thead>
-   	<tbody>
-   		<tr>
-   		<c:forEach var="list" items="${result}">
-   			<td>{result.tempId}</tr>
-   			<td>{result.tempVal}</tr>
-   		</c:forEach>
-   		</tr>
-   	</tbody>
-   </table>
+   * 등록용
+<form action="/temp/tempSelect.do" method="post" name="frm">
+	<label for="tempVal">값 정보 : </label>
+	<!-- label, input 연결 시킬 수 있어서 같이 씀 -->
+	<input type="text" id="tempVal" name="tempVal">
+	<br/>
+	<button type="submit">등록</button>
+</form>
 </body>
 </html>

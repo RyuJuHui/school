@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.let.temp.service.impl.TempMapper">
+
+	<resultMap id="temp" type="egovframework.let.temp.service.TempVO">
+		<result property="tempId" column="TEMP_ID"/>
+		<result property="tempVal" column="TEMP_VAL"/>
+	</resultMap>
+	
+	<select id="selectTemp" resultMap="temp">
+		SELECT TEMP_ID, TEMP_VAL
+		FROM lettemp2
+		WHERE TEMP_ID=#{tempId}
+	</select>
+	
+	<select id="list" resultMap="temp">
+		SELECT * FROM lettemp2
+	</select>
+	
+	<insert id="insertTemp" parameterType="egovframework.let.temp.service.TempVO">
+	<!-- config 타입에 alias 값을 주면  parameterType 써줄 필요 없지만 안써주면 경로 그대로 써줘야함 -->
+		INSERT INTO lettemp2 (TEMP_ID, TEMP_VAL)
+		VALUES (#{tempId}, #{tempVal})
+	</insert>
+	
+</mapper>
