@@ -20,9 +20,10 @@
     <alias name="dataSource-${Globals.DbType}" alias="egov.dataSource" />
     
     <!-- mysql -->
-     <bean id="dataSource-mysql" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <!-- JNDI 설정 후 mysql 설정한 것. -->
+<!--      <bean id="dataSource-mysql" class="org.springframework.jndi.JndiObjectFactoryBean">
     	<property name="jndiName" value="java:comp/env/jdbc/schoolDB" />
-    </bean>
+    </bean> -->
     
 	<!-- hsql -->
 <!--     <jdbc:embedded-database id="dataSource-hsql" type="HSQL">
@@ -36,12 +37,12 @@
 	</bean> -->
 	 
 	<!-- mysql -->
-<!--     <bean id="dataSource-mysql" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <bean id="dataSource-mysql" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${Globals.DriverClassName}"/>
         <property name="url" value="${Globals.Url}" />
         <property name="username" value="${Globals.UserName}"/>
         <property name="password" value="${Globals.Password}"/>
-    </bean> -->
+    </bean>
     
     <!-- Oracle -->
 <!--     <bean id="dataSource-oracle" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
