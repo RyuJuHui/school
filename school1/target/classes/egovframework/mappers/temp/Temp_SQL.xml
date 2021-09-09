@@ -13,7 +13,7 @@
 		WHERE TEMP_ID=#{tempId}
 	</select>
 	
-	<select id="list" resultMap="temp">
+	<select id="listMap" resultMap="temp">
 		SELECT * FROM lettemp2
 	</select>
 	

@@ -16,6 +16,9 @@ public interface TempMapper {
 
 	void listTemp(TempVO vo) throws Exception;
 
-	List<TempVO> listTemp() throws Exception;
+	void listTemp() throws Exception;
+
+	List<TempVO> listMap(TempVO vo) throws Exception;
+
 
 }

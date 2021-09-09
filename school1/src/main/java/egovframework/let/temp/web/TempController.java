@@ -37,28 +37,28 @@ public class TempController {
 	}
 	
 	// 임시데이터 등록하기
-//	@RequestMapping(value = "/temp/insert.do")
-//	public String insert(@ModelAttribute("searchVO") TempVO searchVO,
-//			HttpServletRequest request, ModelMap model) throws Exception {
-//		String tempId = tempService.insertTemp(searchVO);
-//		return "redirect:/temp/select.do?tempId=" + tempId;
-//	}
-//	
-	// 등록 후 목록으로 돌아가기 
-	@RequestMapping(value = "/temp/tempSelect.do")
-	public String insert(TempVO item) throws Exception {
-		tempService.insertTemp(item);
-		return "redirect:/temp/select.do?tempId";
+	@RequestMapping(value = "/temp/insert.do")
+	public String insert(@ModelAttribute("searchVO") TempVO searchVO,
+			HttpServletRequest request, ModelMap model) throws Exception {
+		String tempId = tempService.insertTemp(searchVO);
+		return "redirect:/temp/select.do?tempId=" + tempId;
 	}
 	
-	@RequestMapping(value = "/list")
-	public String list(Model model) throws Exception {
-		List<TempVO> list = tempService.list();
+	// 등록 후 목록으로 돌아가기 
+//	@RequestMapping(value = "/temp/tempSelect.do")
+//	public String insert(TempVO item) throws Exception {
+//		tempService.insertTemp(item);
+//		return "redirect:/temp/select.do?tempId";
+//	}
+//	
+	
+	@RequestMapping(value = "/temp/list.do")
+	public String list(Model model,	HttpServletRequest request, TempVO vo) throws Exception {
+		
+		List<TempVO> list = tempService.list(vo);
 		
 		model.addAttribute("list", list);
 		
-		return "temp/TempRegist" + list;
-		
-		
+		return "temp/list";
 	}
 }

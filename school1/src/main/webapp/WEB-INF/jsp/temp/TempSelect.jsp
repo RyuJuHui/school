@@ -12,21 +12,5 @@
 </head>
 <body>
 <%--    결과 값 : ${result.tempVal} --%>
-   <table>
-   	<thead>
-   	<th>
-   		<tr>TEMP_ID</tr>
-   		<tr>TEMP_VAL</tr>
-   	</th>
-   	</thead>
-   	<tbody>
-   		<tr>
-   		<c:forEach var="list" items="${result}">
-   			<td>{result.tempId}</tr>
-   			<td>{result.tempVal}</tr>
-   		</c:forEach>
-   		</tr>
-   	</tbody>
-   </table>
 </body>
 </html>

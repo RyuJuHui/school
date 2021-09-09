@@ -48,17 +48,13 @@ public class TempServiceImpl extends EgovAbstractServiceImpl implements TempServ
 //	ibatis와 연결
 
 	@Override
-	public void listTemp(TempVO vo) throws Exception {
-		
-		tempMapper.listTemp(vo);
+	public List<TempVO> list(TempVO vo) throws Exception {
+	
+		return tempMapper.listMap(vo);
 	}
+	
+	
 
-	@Override
-	public List<TempVO> list() throws Exception {
-		
-		return tempMapper.listTemp();
-		
-	}
 
 
 }
