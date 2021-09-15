@@ -44,14 +44,6 @@ public class TempController {
 		return "redirect:/temp/select.do?tempId=" + tempId;
 	}
 	
-	// 등록 후 목록으로 돌아가기 
-//	@RequestMapping(value = "/temp/tempSelect.do")
-//	public String insert(TempVO item) throws Exception {
-//		tempService.insertTemp(item);
-//		return "redirect:/temp/select.do?tempId";
-//	}
-//	
-	
 	@RequestMapping(value = "/temp/list.do ")
 	public String list(Model model,	HttpServletRequest request, TempVO vo) throws Exception {
 		
