@@ -13,14 +13,34 @@
 		WHERE TEMP_ID=#{tempId}
 	</select>
 	
-	<select id="listMap" resultMap="temp">
-		SELECT * FROM lettemp2
-	</select>
-	
 	<insert id="insertTemp" parameterType="egovframework.let.temp.service.TempVO">
 	<!-- config 타입에 alias 값을 주면  parameterType 써줄 필요 없지만 안써주면 경로 그대로 써줘야함 -->
 		INSERT INTO lettemp2 (TEMP_ID, TEMP_VAL)
 		VALUES (#{tempId}, #{tempVal})
 	</insert>
+	
+	<!-- 리스트 불러오기 -->
+	<select id="listTemp" resultMap="temp">
+		SELECT TEMP_ID, TEMP_VAL 
+		FROM lettemp2
+		LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
+	</select>
+	
+	<select id="selectTempListCnt" resultType="java.lang.Integer">
+		SELECT
+		COUNT(*) CNT
+		FROM lettemp2
+	</select>
+	
+	<update id="updateTemp" parameterType="egovframework.let.temp.service.TempVO">
+		UPDATE lettemp2
+		SET TEMP_VAL=#{tempVal}
+		WHERE TEMP_ID=#{tempId}
+	</update>
+	
+	<delete id="deleteTemp" parameterType="egovframework.let.temp.service.TempVO">
+		DELETE FROM lettemp2
+		WHERE TEMP_ID =#{tempId}
+	</delete>
 	
 </mapper>

@@ -9,5 +9,6 @@
 	
     <typeAliases>
 		<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+		<!-- <typeAlias alias="temptempVO" type="egovframework.let.temptemp.service.TemptempVO"/> -->
     </typeAliases>
 </configuration>

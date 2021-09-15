@@ -3,19 +3,27 @@
 <%@ taglib uri="http://egovframework.gov/ctl/ui" prefix="ui" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-
+<c:choose>
+	<c:when test="${not empty searchVO.tempId}">
+		<c:set var="actionUrl" value="/temp/update.do" />
+	</c:when>
+	<c:otherwise>
+		<c:set var="actionUrl" value="/temp/insert.do"/>
+	</c:otherwise>
+</c:choose>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>데이터 가져오기~ </title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-   * 등록용
-<form action="/temp/list.do" method="post" name="frm">
+   * 등록폼
+<form action="${actionUrl}" method="post" name="tempVO">
+	<input type="hidden" name="tempId" value="${result.tempId}">
 	<label for="tempVal">값 정보 : </label>
-	<!-- label, input 연결 시킬 수 있어서 같이 씀 -->
-	<input type="text" id="tempVal" name="tempVal">
+	<input type="text" id="tempVal" name="tempVal" value="${result.tempVal}">
 	<br/>
 	<button type="submit">등록</button>
 </form>

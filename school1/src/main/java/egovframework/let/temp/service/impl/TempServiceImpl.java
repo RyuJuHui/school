@@ -17,7 +17,6 @@ public class TempServiceImpl extends EgovAbstractServiceImpl implements TempServ
 
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertyService;
-
 	
 	@Resource(name = "tempMapper")
 	protected TempMapper tempMapper;
@@ -49,9 +48,21 @@ public class TempServiceImpl extends EgovAbstractServiceImpl implements TempServ
 
 	@Override
 	public List<TempVO> list(TempVO vo) throws Exception {
-	
-		return tempMapper.listMap(vo);
+		return tempMapper.listTemp(vo);
 	}
+	
+	public int selectTempListCnt(TempVO vo) throws Exception {
+		return tempMapper.selectTempListCnt(vo);
+	}
+	
+	public void updateTemp(TempVO vo) throws Exception {
+		tempMapper.updateTemp(vo);
+	}
+	
+	public void deleteTemp(TempVO vo) throws Exception {
+		tempMapper.deleteTemp(vo);
+	}
+	
 	
 	
 
