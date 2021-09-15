@@ -52,7 +52,7 @@ public class TempController {
 //	}
 //	
 	
-	@RequestMapping(value = "/temp/list.do")
+	@RequestMapping(value = "/temp/list.do ")
 	public String list(Model model,	HttpServletRequest request, TempVO vo) throws Exception {
 		
 		List<TempVO> list = tempService.list(vo);
