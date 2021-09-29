@@ -76,7 +76,6 @@ public class EgovLoginController {
 	@RequestMapping(value = "/uat/uia/actionLogin.do")
 	public String actionLogin(@ModelAttribute("loginVO") LoginVO loginVO, HttpServletRequest request, ModelMap model) throws Exception {
 
-		// 1. 일반 로그인 처리
 		LoginVO resultVO = loginService.actionLogin(loginVO);
 
 		boolean loginPolicyYn = true;
