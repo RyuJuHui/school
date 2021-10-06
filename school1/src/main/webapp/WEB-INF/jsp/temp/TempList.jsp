@@ -55,13 +55,13 @@
 	   	</tfoot>
 	   </table>
 	
-<%--    <div id="paging_div">
+   <div id="paging_div">
 	<ul class="paging_align">
    		<c:url var="pageUrl" value="/temp/tempList.do"/>
    		<c:set var="pagingParam"><c:out value="${pageUrl}"/></c:set>
-   		<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="${pagingParam}" />
+		<ui:pagination paginationInfo="${paginationInfo}" type="image" jsFunction="${pagingParam}"/>
    	</ul>
-   </div> --%>
+   </div>
    </div>
    <button type="button" id="btn-reg" data-href="/temp/tempRegist.do">
    		등록하기

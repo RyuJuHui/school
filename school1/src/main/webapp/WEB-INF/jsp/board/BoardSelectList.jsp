@@ -19,6 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta charset="UTF-8">
 <title>수업용 게시판</title>
+<link href="/css/common.css" rel="stylesheet" type="text/css">
 <!-- BBS Style -->
 <!-- <link href="asset/BBSTMP_0000000000001/style.css" rel="stylesheet" /> -->
 <link href="http://172.16.144.100:2021/asset/BBSTMP_0000000000001/style.css" rel="stylesheet">
@@ -100,11 +101,10 @@
 								<tr>
 									<td class="num">
 									<%-- ${searchVO.pageIndex}==${searchVO.pageUnit}== --%>
-										<c:out value="${paginstionInfo.totalRecordCount -
-											((searchVO.pageIndex-1) * searchVO.pageUnit) - (status.count - 1)}" />
+										<c:out value="${paginationInfo.totalRecordCount - ((searchVO.pageIndex-1) * searchVO.pageUnit) - (status.count - 1)}" />
 									</td>
 									<td class="tit">
-										<c:url var="viewUrl" value="/board/select.do${BASE_PARAM}">
+										<c:url var="viewUrl" value="/board/select.do${_BASE_PARAM}">
 											<c:param name="boardId" value="${result.boardId}" />
 											<c:param name="pageIndex" value="${searchVO.pageIndex}" />
 										</c:url>

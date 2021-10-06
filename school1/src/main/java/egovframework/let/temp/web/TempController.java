@@ -61,7 +61,7 @@ public class TempController {
 		
 		paginationInfo.setCurrentPageNo(searchVO.getPageIndex());
 		paginationInfo.setRecordCountPerPage(searchVO.getPageUnit());
-		paginationInfo.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
+		paginationInfo.setPageSize(searchVO.getPageSize());
 		
 		searchVO.setFirstIndex(paginationInfo.getFirstRecordIndex());
 		searchVO.setLastIndex(paginationInfo.getLastRecordIndex());
